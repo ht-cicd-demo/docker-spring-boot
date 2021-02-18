@@ -12,7 +12,7 @@ public class HelloWorldController {
 
 	@RequestMapping("/")
 	public Greeting index() {
-		return new Greeting(counter.incrementAndGet(), "Hello world!");
+		return new Greeting(counter.incrementAndGet(), "Hello World!");
 	}
 
 }

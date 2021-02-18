@@ -33,6 +33,6 @@ public class HelloWorldControllerIT {
     public void getHello() throws Exception {
         ResponseEntity<String> response = template.getForEntity(base.toString(),
                 String.class);
-        assertThat(response.getBody()).isEqualTo("Hello World!");
+        assertThat(response.getBody()).contains("Hello World!");
     }
 }

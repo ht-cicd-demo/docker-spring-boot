@@ -1,6 +1,6 @@
 package com.highlight.helloworld;
 
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -24,6 +24,6 @@ public class HelloWorldControllerTest {
 	public void getHello() throws Exception {
 		mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
-				.andExpect(content().string(equalTo("Hello World!")));
+				.andExpect(content().string(containsString("Hello World!")));
 	}
 }
