@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps { //Checking out the repo
-                checkout changelog: true, poll: true, scm: [$class: 'GitSCM', branches: [[name: '*/master']], browser: [$class: 'BitbucketWeb', repoUrl: 'https://web.com/blah'], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'speeduser', url: 'https://github.com/ht-cicd-demo/docker-spring-boot.git']]]
+                checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'speeduser', url: 'https://github.com/ht-cicd-demo/docker-spring-boot.git']]])
             }
         }
         stage('Unit & Integration Tests') {
